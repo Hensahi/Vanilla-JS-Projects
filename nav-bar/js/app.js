@@ -1,4 +1,4 @@
-const BUTTON = document.querySelector(".nav-toogle");
+const BUTTON = document.querySelector(".nav-toggle");
 const LINKS = document.querySelector(".links");
 
 BUTTON.addEventListener("click", () => {
