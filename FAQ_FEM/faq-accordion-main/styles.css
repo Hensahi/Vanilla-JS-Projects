@@ -42,6 +42,10 @@ body {
   letter-spacing: 1px;
 }
 
+.hide {
+  display: none;
+}
+
 /*FOOTER*/
 
 .attribution {
