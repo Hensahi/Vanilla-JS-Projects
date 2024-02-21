@@ -41,11 +41,9 @@ removeIcon.forEach(icon => {
 });
 
 
-// Se inicia funcionalidad de la aplicacion agregando los event listeners para las diferentes preguntas
+// Se continua funcionalidad de la aplicacion mejorando los event listeners para las diferentes preguntas e iconos
 
-//todo: La funcionalidad actual agrega la clase hide al boton de ocultar cuando se da click en el boton mostrar; lo que debe hacer es agregar dicha clase al parrafo de respuesta.
-
-//todo: la funcionalidad actual no intercambia entre el icono de mostrar y ocultar segun sea cliqueado el titulo y/o uno de los botones
+//todo: La funcionalidad debe mostrar el icono correcto segun corresponda al igual que debe ocultar o mostrar la respuesta segun corresponda al dar clic tanto al titulo como al icono que esta mostrando. e.i. Si se da clic al titulo, se debe mostrar la respuesta y cambiar el icono de mostrar al de ocultar, si mientras que se esta mostrando la respuesta y el icono de ocultar/minimizar, le damos clic al icono de ocultar/minimizar, se debe ocultar la respuesta y cambiar el icono de ocultar/minimizar al de mostrar.
 
 //todo: la funcionalidad actual no oculta automaticamente la respuesta abierta al momento al mostrar otra respuesta.
 
