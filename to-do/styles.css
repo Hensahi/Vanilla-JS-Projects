@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    height: 80vh;
+    margin: 100px 0 0 0;
+}
+
+.main_content {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: #dee0e0;
+    border: 5px solid #000;
+}
+
+.task_container {
+    padding: 0;
+}
+
+.taskInputField {}
+
+.task,
+.taskInputField {
+    width: 400px;
+    max-width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px auto;
+    padding: 5px;
+    list-style: none;
+    transition: all .3s;
+}
+
+.task {
+    text-transform: capitalize;
+}
+
+.task:hover {
+    background-color: #383838;
+    color: #fff;
+}
+
+.task_btn {
+    width: 130px;
+    display: block;
+    margin: 0 auto;
+    background-color: #e96464;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.iconSuccess,
+.iconDelete {
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.iconSuccess {
+    color: #008000;
+    margin-right: 15px;
+}
+
+.iconDelete {
+    color: #e60707;
+}
+
+.done {
+    background-color: #5a5757;
+    text-decoration: line-through;
+}

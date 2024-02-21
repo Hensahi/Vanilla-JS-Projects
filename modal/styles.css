@@ -1,0 +1,35 @@
+.mainTitle {
+    text-align: center;
+}
+
+.pElementContent,
+.ventanaModal,
+main {
+
+    margin: 20px auto;
+}
+
+.pElementContent {
+    width: 800px;
+    text-align: justify;
+    padding: 15px;
+}
+
+main {
+    width: 800px;
+}
+
+.ventanaModal {
+    width: 500px;
+    text-align: justify;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hide {
+    display: none;
+    color: #111010;
+}

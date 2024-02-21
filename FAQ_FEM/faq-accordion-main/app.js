@@ -10,7 +10,10 @@ questionTitle.forEach((question) => {
     question.addEventListener("click", (e) => {
         if (e.target.classList.contains("questionTitle")) {
 
-            e.target.classList.toggle("hide");
+            // e.target.nextSibling.classList.toggle("hide");
+            e.target.nextElementSibling.classList.toggle("hide");
+            // console.log(e);
+
         }
 
     });
@@ -20,8 +23,9 @@ addIcon.forEach(icon => {
     icon.addEventListener("click", (e) => {
         e.target.classList.add("hide");
         e.target.parentNode.children[1].classList.remove("hide");
+        e.target.parentNode.parentNode.nextElementSibling.classList.toggle("hide");
 
-        console.log(e.target);
+        console.log(e.target.parentNode.parentNode.nextElementSibling);
 
     });
 });
@@ -30,6 +34,8 @@ removeIcon.forEach(icon => {
     icon.addEventListener("click", (e) => {
         e.target.classList.add("hide");
         e.target.parentNode.children[0].classList.remove("hide");
+        e.target.parentNode.parentNode.nextElementSibling.classList.toggle("hide");
+
 
     });
 });
