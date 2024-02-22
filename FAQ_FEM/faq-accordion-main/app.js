@@ -6,65 +6,59 @@ const removeIcon = document.querySelectorAll(".removeIcon");
 // console.log(questionTitle);
 
 function closeOpenAnswer(event) {
-  for (let i = 0; i < questionTitle.length; i++) {
-    if (
-      questionTitle[i] == event.target ||
-      event.target.classList.contains("removeIcon")
-    ) {
-      continue;
-    } else if (!answers[i].classList.contains("hide")) {
-      answers[i].classList.add("hide");
-      // event.target.firstElementChild.firstElementChild.classList.remove("hide");
-      // event.target.firstElementChild.lastElementChild.classList.add("hide");
+    for (let i = 0; i < questionTitle.length; i++) {
+        if (questionTitle[i] == event.target || event.target.classList.contains("addIcon") || event.target.classList.contains("removeIcon")) {
+            continue;
+        } else {
 
-      // console.log(event.target.firstElementChild.firstElementChild.classList);
-      // console.log(event.target.firstElementChild.lastElementChild.classList);
+            answers.forEach(answer => answer.classList.add("hide"));
+            removeIcon.forEach(icon => icon.classList.add("hide"));
+            addIcon.forEach(icon => icon.classList.remove("hide"));
+
+            // console.log(i);
+            // console.log(event.target.classList)
+
+        }
     }
-  }
 }
 
 function resetIcon(event, index) {
-  event.target.classList.add("hide");
-  event.target.parentNode.children[index].classList.toggle("hide");
-  event.target.parentNode.parentNode.nextElementSibling.classList.toggle(
-    "hide"
-  );
-  console.log(event.target.parentNode.parentNode.nextElementSibling);
+    event.target.classList.add("hide");
+    event.target.parentNode.children[index].classList.toggle("hide");
+    event.target.parentNode.parentNode.nextElementSibling.classList.toggle(
+        "hide"
+    );
+    console.log(event.target.parentNode.parentNode.nextElementSibling);
+    console.log(event.target.parentNode.children[index]);
+
 }
 
 questionTitle.forEach((question) => {
-  question.addEventListener("click", (e) => {
-    closeOpenAnswer(e);
-    if (e.target.classList.contains("questionTitle")) {
-      // e.target.nextSibling.classList.toggle("hide");
+    question.addEventListener("click", (e) => {
+        closeOpenAnswer(e);
+        if (e.target.classList.contains("questionTitle")) {
+            // e.target.nextSibling.classList.toggle("hide");
 
-      e.target.nextElementSibling.classList.toggle("hide");
-      e.target.firstElementChild.firstElementChild.classList.toggle("hide");
-      e.target.firstElementChild.lastElementChild.classList.toggle("hide");
-    }
-  });
+            e.target.nextElementSibling.classList.toggle("hide");
+            e.target.firstElementChild.firstElementChild.classList.toggle("hide");
+            e.target.firstElementChild.lastElementChild.classList.toggle("hide");
+        }
+    });
 });
 
 addIcon.forEach((icon) => {
-  icon.addEventListener("click", (e) => {
-    closeOpenAnswer(e);
-    // e.target.classList.add("hide");
-    // e.target.parentNode.children[1].classList.toggle("hide");
-    // e.target.parentNode.parentNode.nextElementSibling.classList.toggle("hide");
-    resetIcon(e, 1);
-
-    console.log(e.target.parentNode.parentNode.nextElementSibling);
-  });
+    icon.addEventListener("click", (e) => {
+        closeOpenAnswer(e);
+        resetIcon(e, 1);
+        // console.log(e.target.parentNode.parentNode.nextElementSibling);
+    });
 });
 
 removeIcon.forEach((icon) => {
-  icon.addEventListener("click", (e) => {
-    closeOpenAnswer(e);
-    // e.target.classList.add("hide");
-    // e.target.parentNode.children[0].classList.toggle("hide");
-    // e.target.parentNode.parentNode.nextElementSibling.classList.toggle("hide");
-    resetIcon(e, 0);
-  });
+    icon.addEventListener("click", (e) => {
+        closeOpenAnswer(e);
+        resetIcon(e, 0);
+    });
 });
 
 // Se continua funcionalidad de la aplicacion mejorando los event listeners para las diferentes preguntas e iconos
